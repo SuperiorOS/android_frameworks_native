@@ -72,6 +72,40 @@ cc_defaults {
         "android.hardware.graphics.composer@2.2-command-buffer",
         "android.hardware.graphics.composer@2.3-command-buffer",
     ],
+    product_variables: {
+        superior: {
+            uses_qcom_um_3_18_family: {
+                cflags: ["-DQCOM_UM_FAMILY"],
+                header_libs: [
+                    "//hardware/qcom/display-caf/msm8996:display_intf_headers",
+                ],
+            },
+            uses_qcom_um_4_4_family: {
+                cflags: ["-DQCOM_UM_FAMILY"],
+                header_libs: [
+                    "//hardware/qcom/display-caf/msm8998:display_intf_headers",
+                ],
+            },
+            uses_qcom_um_4_9_family: {
+                cflags: ["-DQCOM_UM_FAMILY"],
+                header_libs: [
+                    "//hardware/qcom/display-caf/sdm845:display_intf_headers",
+                ],
+            },
+            uses_qcom_um_4_14_family: {
+                cflags: ["-DQCOM_UM_FAMILY"],
+                header_libs: [
+                    "//hardware/qcom/display-caf/sm8150:display_intf_headers",
+                ],
+            },
+            uses_qcom_um_4_19_family: {
+                cflags: ["-DQCOM_UM_FAMILY"],
+                header_libs: [
+                    "//hardware/qcom/display-caf/sm8250:display_intf_headers",
+                ],
+            },
+        },
+    },
     export_static_lib_headers: [
         "libcompositionengine",
         "librenderengine",
